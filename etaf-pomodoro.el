@@ -125,6 +125,22 @@ A positive whole number of minutes, 25 by default."
   :type 'integer
   :group 'etaf-pomodoro)
 
+;;;###autoload
+(eval-and-compile
+  ;; A checkout is added to `load-path' by its root only.  The implementation
+  ;; lives in lisp/, so find it beside the entry; `load-file-name' points into
+  ;; the native-compilation cache once the package is compiled there, which has
+  ;; no lisp/ directory, so the first candidate that does wins.
+  (let ((root (cl-loop for file in (list load-file-name
+                                         (bound-and-true-p byte-compile-current-file)
+                                         (locate-library "etaf-pomodoro")
+                                         buffer-file-name)
+                       for dir = (and file (file-name-directory file))
+                       when (and dir (file-directory-p (expand-file-name "lisp" dir)))
+                       return dir)))
+    (when root
+      (add-to-list 'load-path (expand-file-name "lisp" root)))))
+
 (require 'etaf-pomodoro-theme)
 (require 'etaf-pomodoro-session)
 (require 'etaf-pomodoro-views)
