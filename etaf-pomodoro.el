@@ -2,7 +2,7 @@
 
 ;; SPDX-License-Identifier: GPL-3.0-or-later
 ;; Author: ETAF contributors
-;; Version: 0.1.1
+;; Version: 0.2.0
 ;; Package-Requires: ((emacs "29.1") (etaf "0.3.0") (etaf-ui "0.2.0"))
 ;; Keywords: tools, timer, hypermedia
 ;; URL: https://github.com/emacs-taf/etaf-pomodoro
@@ -13,7 +13,7 @@
 ;;
 ;; Load this package with (require 'etaf-pomodoro) after adding this
 ;; repository and the ETAF, ETAF UI, Ebox and ECSS roots to `load-path'.  A
-;; Pomodoro timer is an ETAF application: `etaf-pomodoro-start' opens one
+;; Pomodoro timer is an ETAF application: `etaf-pomodoro-open' opens one
 ;; window whose countdown, buttons and keys the framework owns, and the same
 ;; session mounts as a floating panel through `etaf-pomodoro-create' and
 ;; `etaf-pomodoro-view', for example with `etaf-posframe-register-app'.
@@ -44,8 +44,8 @@
 ;; Focus length of a session created without :minutes.  Default 25; a positive
 ;; whole number of minutes.
 ;;
-;; Function: etaf-pomodoro-start (&optional minutes)
-;;;###autoload (autoload 'etaf-pomodoro-start "etaf-pomodoro" nil t)
+;; Function: etaf-pomodoro-open (&optional minutes)
+;;;###autoload (autoload 'etaf-pomodoro-open "etaf-pomodoro" nil t)
 ;; Open a timer in its own buffer and return the buffer.
 ;; The timer starts paused; `p' starts or pauses it, `r' resets it, `+' adds
 ;; five minutes, `t' switches the style and `q' closes the window.  An open

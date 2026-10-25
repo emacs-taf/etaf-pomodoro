@@ -8,7 +8,7 @@ call, and the palette follows the appearance the host reports.
 
 ## Capabilities
 
-- `M-x etaf-pomodoro-start` opens the timer as an ETAF application
+- `M-x etaf-pomodoro-open` opens the timer as an ETAF application
   (`etaf-app-open`): the framework owns the buffer, the default face, the fit
   callback and the close hook.
 - The same session mounts anywhere with `etaf-pomodoro-create` and
@@ -50,7 +50,7 @@ Checkout users add the repository roots to `load-path` and require the entry:
 
 ```elisp
 ;; A standalone timer window.
-(etaf-pomodoro-start)          ; or M-x etaf-pomodoro-start
+(etaf-pomodoro-open)           ; or M-x etaf-pomodoro-open
 (etaf-pomodoro-stop)           ; closes the window and stops the tick
 ```
 

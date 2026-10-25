@@ -30,7 +30,7 @@
   (plist-get (etaf-pomodoro--tokens (etaf-appearance)) :ui-panel-fg))
 
 ;;;###autoload
-(defun etaf-pomodoro-start (&optional minutes)
+(defun etaf-pomodoro-open (&optional minutes)
   "Open a Pomodoro timer in its own buffer and return the buffer.
 MINUTES is the focus length, `etaf-pomodoro-default-minutes' by default.  The
 timer starts paused; `p' starts or pauses it, `r' resets it, `+' adds five

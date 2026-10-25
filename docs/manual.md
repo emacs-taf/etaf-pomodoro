@@ -5,7 +5,7 @@ countdown, three styles and a palette that follows the host.
 
 ## Open and close
 
-`M-x etaf-pomodoro-start` opens the timer in its own buffer through
+`M-x etaf-pomodoro-open` opens the timer in its own buffer through
 `etaf-app-open`.  The framework owns the buffer, the default face, the fit
 callback and the close hook, so the timer needs no resize or lifecycle code of
 its own.  An already open timer is selected instead of opening a second one.
@@ -100,9 +100,9 @@ the countdown surface repaints without being reopened.
 
 ```elisp
 (require 'etaf-pomodoro)
-(etaf-pomodoro-start 10)            ; ten minutes
+(etaf-pomodoro-open 10)             ; ten minutes
 ```
 
 Press `p` to start, watch the progress line move, `+` for five more minutes,
 `t` to change style, and `q` to close the window.  The countdown stops with the
-window; the next `etaf-pomodoro-start` begins a fresh session.
+window; the next `etaf-pomodoro-open` begins a fresh session.

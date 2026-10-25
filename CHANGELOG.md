@@ -6,6 +6,13 @@ All notable user-visible changes are recorded here. The format follows
 
 ## [Unreleased]
 
+### Changed
+
+- `etaf-pomodoro-open` replaces `etaf-pomodoro-start`, so the command that
+  presents the timer follows the name every other ETAF application uses and
+  the installer can open it.  Update bindings and scripts that call
+  `etaf-pomodoro-start`; the arguments are unchanged.
+
 ## [0.1.0]
 
 ### Added
