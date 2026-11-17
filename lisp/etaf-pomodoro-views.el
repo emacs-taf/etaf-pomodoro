@@ -41,10 +41,10 @@
          (rest (- etaf-pomodoro--progress-columns filled)))
     (etaf-view
      (flex :column-gap '(ch 0) :justify-content 'center :align-items 'center
-           (text :font-size 10 :font-weight 'bold
+           (text :font-size 0.65 :font-weight 'bold
                  :color (etaf-theme-token :ui-accent)
                  (expr (make-string filled 9473)))
-           (text :font-size 10
+           (text :font-size 0.65
                  :color (etaf-theme-token :ui-disabled-bg)
                  (expr (make-string rest 9472)))))))
 
@@ -92,10 +92,10 @@
   (etaf-view
    (flex :flex-direction 'column :height '(lh 4) :justify-content 'center
          :align-items 'center
-           (text :font-size 32 :font-weight 'bold
+           (text :font-size 2 :font-weight 'bold
                  :color (etaf-theme-token :ui-panel-fg)
                  (expr (etaf-pomodoro--clock left)))
-           (text :font-size 11
+           (text :font-size 0.7
                  :color (etaf-theme-token :ui-muted-fg)
                  (expr (etaf-pomodoro--status left on))))))
 
@@ -107,10 +107,10 @@
         (image :src (etaf-pomodoro--ring-image fraction palette)
                :columns 8 :rows 4)
         (column :item-gap '(lh 0)
-                (text :font-size 26 :font-weight 'bold
+                (text :font-size 1.6 :font-weight 'bold
                       :color (etaf-theme-token :ui-panel-fg)
                       (expr (etaf-pomodoro--clock left)))
-                (text :font-size 11
+                (text :font-size 0.7
                       :color (etaf-theme-token :ui-muted-fg)
                       (expr (format "%d%% · %s"
                                     (round (* 100 fraction))
@@ -126,13 +126,13 @@
                  :border-radius '(px 6)
                  :align-items 'center
                    (flex :column-gap '(ch 1) :align-items 'center
-                        (text :font-size 11
+                        (text :font-size 0.7
                               :color (etaf-theme-token :ui-accent)
                               "专注")
-                        (text :font-size 24 :font-weight 'bold
+                        (text :font-size 1.5 :font-weight 'bold
                               :color (etaf-theme-token :ui-panel-fg)
                               (expr (etaf-pomodoro--clock left))))
-                   (text :font-size 10
+                   (text :font-size 0.65
                          :color (etaf-theme-token :ui-muted-fg)
                          (expr (format "%d%%" (round (* 100 fraction)))))))))
 
